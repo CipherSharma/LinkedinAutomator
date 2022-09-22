@@ -10,11 +10,16 @@ driver = webdriver.Chrome(service=Service("D:\Code\Code\Selenium\chromedriver\ch
 
 f=open("./text.csv", "w")
 
+# enter your linkedIn username here 
+USERNAME=""
+# enter your linkedIn password here
+PASSWORD=""
+
 driver.implicitly_wait(5)
 loginUrl="https://www.linkedin.com/login"
 driver.get(loginUrl)
-driver.find_element(By.XPATH,'.//*[@id="username"]').send_keys("tudsharma@gmail.com")
-driver.find_element(By.XPATH, './/*[@id="password"]').send_keys("Tushar@0380")
+driver.find_element(By.XPATH,'.//*[@id="username"]').send_keys(USERNAME)
+driver.find_element(By.XPATH, './/*[@id="password"]').send_keys(PASSWORD)
 sleep(5)
 driver.find_element(By.XPATH, "./html/body/div/main/div[2]/div[1]/form/div[3]/button").click()
 
